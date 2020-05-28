@@ -19,9 +19,13 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Pagamentos", "Pagamentos", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Vendas", "Vendas", "{BA80E2AF-FE3F-4607-990B-6A50316D7B9A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NerdStore.Catalogo.Domain", "src\NerdStore.Catalogo.Domain\NerdStore.Catalogo.Domain.csproj", "{300AD469-3B24-4278-8A20-C485BF96088F}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NerdStore.Catalogo.Domain", "src\NerdStore.Catalogo.Domain\NerdStore.Catalogo.Domain.csproj", "{300AD469-3B24-4278-8A20-C485BF96088F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NerdStore.Core", "src\NerdStore.Core\NerdStore.Core.csproj", "{0449AFC0-7928-4CD6-AC37-7FC584E82A10}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NerdStore.Core", "src\NerdStore.Core\NerdStore.Core.csproj", "{0449AFC0-7928-4CD6-AC37-7FC584E82A10}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{30420A58-F2D9-4863-8FF0-1A7EF2188F38}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NerdStore.Catalogo.Domain.Tests", "tests\NerdStore.Catalogo.Domain.Tests\NerdStore.Catalogo.Domain.Tests.csproj", "{BC984B4B-A072-4365-9A06-6B056F847521}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -37,6 +41,10 @@ Global
 		{0449AFC0-7928-4CD6-AC37-7FC584E82A10}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0449AFC0-7928-4CD6-AC37-7FC584E82A10}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0449AFC0-7928-4CD6-AC37-7FC584E82A10}.Release|Any CPU.Build.0 = Release|Any CPU
+		{BC984B4B-A072-4365-9A06-6B056F847521}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{BC984B4B-A072-4365-9A06-6B056F847521}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{BC984B4B-A072-4365-9A06-6B056F847521}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{BC984B4B-A072-4365-9A06-6B056F847521}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -50,6 +58,8 @@ Global
 		{BA80E2AF-FE3F-4607-990B-6A50316D7B9A} = {9337E56F-796C-4312-94A3-EF88CC500E15}
 		{300AD469-3B24-4278-8A20-C485BF96088F} = {9D3F3B0D-4DFB-4E73-8F48-A3848FBA9249}
 		{0449AFC0-7928-4CD6-AC37-7FC584E82A10} = {1B5DCF3D-D743-48DD-BF06-BA8F01489C82}
+		{30420A58-F2D9-4863-8FF0-1A7EF2188F38} = {9D3F3B0D-4DFB-4E73-8F48-A3848FBA9249}
+		{BC984B4B-A072-4365-9A06-6B056F847521} = {30420A58-F2D9-4863-8FF0-1A7EF2188F38}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {3F366179-0848-42BA-9E4B-1DCB23261B0B}
