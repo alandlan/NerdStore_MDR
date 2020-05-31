@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
+using NerdStore.Core.Messages;
 
 namespace NerdStore.Core.DomainObjects
 {
@@ -8,19 +8,38 @@ namespace NerdStore.Core.DomainObjects
     {
         public Guid Id { get; set; }
 
+        private List<Event> _notificacoes;
+        public IReadOnlyCollection<Event> Notificacoes => _notificacoes?.AsReadOnly();
+
         protected Entity()
         {
             Id = Guid.NewGuid();
         }
 
+        public void AdicionarEvento(Event evento)
+        {
+            _notificacoes = _notificacoes ?? new List<Event>();
+            _notificacoes.Add(evento);
+        }
+
+        public void RemoverEvento(Event eventItem)
+        {
+            _notificacoes?.Remove(eventItem);
+        }
+
+        public void LimparEventos()
+        {
+            _notificacoes?.Clear();
+        }
+
         public override bool Equals(object obj)
         {
-            var compateTo = obj as Entity;
+            var compareTo = obj as Entity;
 
-            if (ReferenceEquals(this, compateTo)) return true;
-            if (ReferenceEquals(null, compateTo)) return true;
+            if (ReferenceEquals(this, compareTo)) return true;
+            if (ReferenceEquals(null, compareTo)) return false;
 
-            return Id.Equals(compateTo.Id);
+            return Id.Equals(compareTo.Id);
         }
 
         public static bool operator ==(Entity a, Entity b)
@@ -47,6 +66,11 @@ namespace NerdStore.Core.DomainObjects
         public override string ToString()
         {
             return $"{GetType().Name} [Id={Id}]";
+        }
+
+        public virtual bool EhValido()
+        {
+            throw new NotImplementedException();
         }
     }
 }

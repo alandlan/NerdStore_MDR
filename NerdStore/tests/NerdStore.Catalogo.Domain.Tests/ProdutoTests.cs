@@ -1,5 +1,5 @@
-using NerdStore.Core.DomainObjects;
 using System;
+using NerdStore.Core.DomainObjects;
 using Xunit;
 
 namespace NerdStore.Catalogo.Domain.Tests
@@ -9,6 +9,7 @@ namespace NerdStore.Catalogo.Domain.Tests
         [Fact]
         public void Produto_Validar_ValidacoesDevemRetornarExceptions()
         {
+
             // Arrange & Act & Assert
 
             var ex = Assert.Throws<DomainException>(() =>
