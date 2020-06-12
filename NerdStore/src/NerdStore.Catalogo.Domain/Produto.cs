@@ -5,7 +5,7 @@ namespace NerdStore.Catalogo.Domain
 {
     public class Produto : Entity, IAggregateRoot
     {
-        public Produto(string nome, string descricao, bool ativo, Guid categoriaId, decimal valor, DateTime dataCadastro, string imagem, Dimensoes dimensoes)
+        public Produto(string nome, string descricao, bool ativo, decimal valor, Guid categoriaId, DateTime dataCadastro, string imagem, Dimensoes dimensoes)
         {
             CategoriaId = categoriaId;
             Nome = nome;
