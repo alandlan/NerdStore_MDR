@@ -1,0 +1,22 @@
+﻿using NerdStore.Core.Data;
+using System;
+using System.Collections.Generic;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace NerdStore.Catalogo.Domain
+{
+    public interface IProdutoRepository : IRepository<Produto>
+    {
+        Task<IEnumerable<Produto>> ObterTodos();
+        Task<Produto> ObterPorId(Guid Id);
+        Task<IEnumerable<Produto>> ObterPorCategoria(int Codigo);
+        Task<IEnumerable<Categoria>> ObterCategoria();
+
+        void Adicionar(Produto produto);
+        void Atualizar(Produto produto);
+        void Adicionar(Categoria categoria);
+        void Atualizar(Categoria categoria);
+
+    }
+}
