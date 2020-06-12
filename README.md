@@ -8,3 +8,4 @@ Curso de Modelagem de Domínios Ricos do Curso Desenvolvedor IO
 - Imutabilidade
 - Ad Hoc setters e getters
 - DomainExceptions customizadas
+- Agregando com objetos de valor
