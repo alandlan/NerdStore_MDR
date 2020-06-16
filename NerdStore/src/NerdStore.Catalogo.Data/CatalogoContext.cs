@@ -8,7 +8,7 @@ using NerdStore.Core.Data;
 
 namespace NerdStore.Catalogo.Data
 {
-    class CatalogoContext : DbContext, IUnitOfWork
+    public class CatalogoContext : DbContext, IUnitOfWork
     {
         /// <summary>
         /// DbContextOptions é o parametro necessário para configurar o contexto na classe startUp. Isso é uma prática para quem vai trabalhar 
@@ -31,9 +31,22 @@ namespace NerdStore.Catalogo.Data
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(CatalogoContext).Assembly);
         }
 
-        public Task<bool> Commit()
+        public async Task<bool> Commit()
         {
-            throw new NotImplementedException();
+            foreach(var entry in ChangeTracker.Entries().Where(entry=>entry.Entity.GetType().GetProperty("DataCadastro") != null))
+            {
+                if(entry.State == EntityState.Added)
+                {
+                    entry.Property("DataCadastro").CurrentValue = DateTime.Now;
+                }
+
+                if(entry.State == EntityState.Modified)
+                {
+                    entry.Property("DataCadastro").IsModified = false;
+                }
+            }
+
+            return await base.SaveChangesAsync() > 0;
         }
     }
 }
